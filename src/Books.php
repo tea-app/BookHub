@@ -114,4 +114,18 @@ class Books
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
   }
+
+  /**
+   * Get User Lend Books
+   * 
+   * @param string $status
+   */
+  public function getUserLendBooks($status)
+  {
+    $stmt = $this->connect->prepare('SELECT * FROM books WHERE status = :status');
+    $stmt->bindParam(':status', $status, PDO::PARAM_STR);
+    $stmt->execute();
+    $books = $stmt->fetchAll();
+    return $books;
+  }
 }
