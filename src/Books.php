@@ -58,9 +58,16 @@ class Books
    * 
    * @param int $shelf_id
    * @param int $cate_id
+   * 
+   * @return array $books
    */
   public function searchShelfCateBooks($shelf_id, $cate_id)
   {
-    
+    $stmt = $this->connect->prepare('SELECT * FROM books WHERE shelf_id = :shelf_id AND title = :title');
+    $stmt->bindParam(':shelf_id', $shelf_id, PDO::PARAM_INT);
+    $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+    $stmt->execute();
+    $books = $stmt->fetchAll();
+    return $books;
   }
 }
