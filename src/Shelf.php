@@ -49,4 +49,18 @@ class Shelf
     $shelfs = $stmt->fetchAll();
     return $shelfs;
   }
+
+  /**
+   * Get Shelf Data
+   * 
+   * @param int $id
+   */
+  public function getShelfData($id)
+  {
+    $stmt = $this->connect->prepare('SELECT * FROM shelf WHERE id = :id');
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $shelf = $stmt->fetch();
+    return $shelf;
+  }
 }
