@@ -19,29 +19,36 @@ function checkLogin()
         if($auth->checkAccessToken($_SESSION['accessToken']))
         {
           // ログインOK
-          exit("200");
+          $return = array('status'=>'200',
+            'pdo'=>$pdo
+          );
+          return $return;
         }
         else
         {
           // アクセストークンが無効
-          exit("400");
+          $return = array('status'=>'400');
+          return $return;
         }
       }
       else
       {
         // 未登録
-        exit("400");
+        $return = array('status'=>'400');
+        return $return;
       }
     }
     else
     {
       // ユーザIdを持っていない
-      exit("400");
+      $return = array('status'=>'400');
+      return $return;
     }
   }
   else
   {
     // アクセストークンが無い
-    exit("400");
+    $return = array('status'=>'400');
+    return $return;
   }
 }
