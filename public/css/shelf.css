@@ -1,0 +1,19 @@
+.shelf {
+  padding-top: 32px;
+}
+
+.shelf-name {
+  font-size: 26px;
+  font-weight: bold;
+  
+}
+
+.shelf-maker {
+  font-size: 18px;
+  padding-bottom: 8px;
+}
+
+.shelf-explanation {
+  font-size: 18px;
+  padding-left: 40px;
+}

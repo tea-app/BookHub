@@ -59,7 +59,6 @@ class Auth
       'content' => $content
     ));
     $contents = file_get_contents($url, false, stream_context_create($options));
-    // var_dump($contents);
   }
 
   /**
