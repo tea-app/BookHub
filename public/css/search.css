@@ -1,0 +1,16 @@
+.search-space {
+  width: 100%;
+  padding: 8px;
+}
+
+.category {
+  width: 200px;
+  float: left;
+  padding-left: 8px;
+}
+
+.search {
+  width: calc(100% - 200px);
+  float: left;
+  padding-left: 8px;
+}
