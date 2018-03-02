@@ -1,16 +1,19 @@
 .search-space {
   width: 100%;
-  padding: 8px;
+  /* padding: 8px; */
+  padding-top: 32px;
+  display: table;
 }
 
 .category {
   width: 200px;
   float: left;
-  padding-left: 8px;
+  margin-right: 8px;
+  /* padding-left: 8px; */
 }
 
 .search {
-  width: calc(100% - 200px);
+  width: calc(100% - 208px);
   float: left;
-  padding-left: 8px;
+  /* padding-left: 8px; */
 }

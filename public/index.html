@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/shelf.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
 	</head>
     <body>
       <header>
@@ -21,6 +26,17 @@
             <div class="shelf-maker">作成者：あああああああああ</div>
             <div class="shelf-explanation">本棚の説明文----</div>
           </div>
+          <div class="search-space">
+              <div class="category">
+                <select class="custom-select d-block w-100" id="country" required>
+                  <option value>カテゴリ</option>
+                  <option>カテゴリ1</option>
+                </select>
+              </div>
+              <div class="search">
+                <input type="text" class="form-control" id="bookName" placeholder="Search" value required>
+              </div>
+            </div>
         </div>  
       </div>    
     </body>
