@@ -13,6 +13,7 @@
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
+    <script src="js/modal.js"></script>
 	</head>
   <body>
     <header>
@@ -39,7 +40,7 @@
           </div>
         </div>
         <div class="shelf-list">
-          <div class="book-content">
+          <div class="book-content" id="1" onClick="reaction(this);">
             <img src="book.jpg" class="book-img"></img>
             <div class="book-info">
               <div class="book-title">
@@ -47,7 +48,7 @@
               </div>
             </div>
           </div>
-          <div class="book-content">
+          <div class="book-content" id="2" onClick="reaction(this);">
             <img src="book2.jpg" class="book-img"></img>
             <div class="book-info">
               <div class="book-title">
