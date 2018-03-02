@@ -86,4 +86,18 @@ class Books
     $books = $stmt->fetchAll();
     return $books;
   }
+
+  /**
+   * Search Shelf's Book Data
+   * 
+   * @param int $id
+   */
+  public function searchShelfBookData($id)
+  {
+    $stmt = $this->connect->prepare('SELECT * FROM books WHERE id = :id');
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $book = $stmt->fetch();
+    return $book;
+  }
 }
