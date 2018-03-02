@@ -1,0 +1,1 @@
+<a href="https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1559472553&redirect_uri=https://dev.prog24.com/public/api2/login.php&state=12345abcde&scope=openid%20profile&nonce=09876xyz">Login</a>
