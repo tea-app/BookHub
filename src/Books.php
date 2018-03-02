@@ -100,4 +100,18 @@ class Books
     $book = $stmt->fetch();
     return $book;
   }
+
+  /**
+   * Lend Books
+   * 
+   * @param int id
+   * @param string userId
+   */
+  public function lendBook($id, $status)
+  {
+    $stmt = $this->connect->prepare('UPDATE books SET status = :status WHERE id = :id');
+    $stmt->bindParam(':status', $status, PDO::PARAM_STR);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+  }
 }
