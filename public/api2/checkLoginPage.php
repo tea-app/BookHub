@@ -2,48 +2,47 @@
 // ページ用のログインチェック
 
 session_start();
-require_once(__DIR__.'/../../src/Auth.php');
-require_once(__DIR__.'/../../src/Users.php');
-require_once(__DIR__.'/../../src/connect.php');
 
-$url = 'https://dev.prog24.com/public/login.php';
-
-if($_SESSION['accessToken'])
+function checkLoginPage()
 {
-  $pdo = connect();
-  $users = new Users($pdo, 'users');
+  if($_SESSION['accessToken'])
+  {
+    require_once(__DIR__.'/../../src/connect.php');
+    require_once(__DIR__.'/../../src/Users.php');
+    $pdo = connect();
+    $users = new Users($pdo, 'users');
 
-  if($_SESSION['userId'])
-  {
-    if($users->getUserInfo($_SESSION['userId']))
+    if($_SESSION['userId'])
     {
-      // 登録済み
-      $auth = new Auth();
-      if($auth->checkAccessToken($_SESSION['accessToken']))
+      if($users->getUserInfo($_SESSION['userId']))
       {
-        // ログインOK
-        // 何もしない
+        require_once(__DIR__.'/../../src/Auth.php');
+        $auth = new Auth();
+        if($auth->checkAccessToken($_SESSION['accessToken']))
+        {
+          // 200 OK
+          $return = array(
+            'status'=>'200',
+            'pdo'=>$pdo
+          );
+          $pdo = null;
+          $users = null;
+          $auth = null;
+          return $return;
+        }else{
+          $return = array('status'=>'400');
+          return $return;
+        }
+      }else{
+        $return = array('status'=>'400');
+        return $return;
       }
-      else
-      {
-        header("Location: {$url}");
-        exit("400");
-      }
+    }else{
+      $return = array('status'=>'400');
+      return $return;
     }
-    else
-    {
-      header("Location: {$url}");
-      exit("400");
-    }
+  }else{
+    $return = array('status'=>'400');
+    return $return;
   }
-  else
-  {
-    header("Location: {$url}");
-    exit("400");
-  }
-}
-else
-{
-  header("Location: {$url}");
-  exit("400");
 }

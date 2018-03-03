@@ -3,11 +3,11 @@
 session_start();
 require_once(__DIR__.'/../../src/Auth.php');
 require_once(__DIR__.'/../../src/Users.php');
-require_once(__DIR__.'/../../src/connect.php');
+// require_once(__DIR__.'/../../src/connect.php');
 
-function checkLogin()
+function checkLogin($pdo)
 {
-  $pdo = connect();
+  // $pdo = connect();
   $users = new Users($pdo, 'users');
   $auth = new Auth();
   if($_SESSION['accessToken'])
