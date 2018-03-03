@@ -63,4 +63,18 @@ class Shelf
     $shelf = $stmt->fetch();
     return $shelf;
   }
+
+  /**
+   * Get User's Shelf Data
+   * 
+   * @param string $user_id
+   */
+  public function getUserShelfData($user_id)
+  {
+    $stmt = $this->connect->prepare('SELECT * FROM shelf WHERE user_id = :user_id');
+    $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+    $stmt->execute();
+    $shelf = $stmt->fetchAll();
+    return $shelf;
+  }
 }
