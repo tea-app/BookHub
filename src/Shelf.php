@@ -36,7 +36,7 @@ class Shelf
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
     $stmt->bindValue(':detail', $detail, PDO::PARAM_STR);
     $stmt->bindValue(':type', $type, PDO::PARAM_INT);
-    var_dump($stmt->execute());
+    $stmt->execute();
   }
 
   /**
