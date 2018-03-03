@@ -41,7 +41,7 @@ if($checkLogin['status'] == '200')
       <header>
         <div class="logo">BookHub</div>
         <img src="test.jpg" class="line-name"></img>
-        <img src="test.jpg" class="make-book"></img>
+        <img src="icon/plus.svg" class="make-book"></img>
       </header>
       <div class="main">
         <div class="content">
