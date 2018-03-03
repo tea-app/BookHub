@@ -1,0 +1,31 @@
+.shelf-config {
+  font-size: 24px;
+  padding-top: 16px;
+}
+
+.cat-edit {
+  padding-top: 48px;
+  font-size: 18px;
+}
+
+.cat-card {
+  margin-left: 8px;
+  border: solid 1px #d3d3d3;
+}
+
+.cat-card p {
+  margin: 8px 16px;
+}
+
+.cat-space {
+  padding-bottom: 24px;
+}
+
+.cat-form {
+  float: left;
+  padding: 0 8px;
+}
+
+.cat-form input {
+  width: 816px;
+}
