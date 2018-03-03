@@ -2,6 +2,7 @@ header {
   height: 64px;
   padding-right: 16px;
   background-color: #ffebcd;
+  min-width: 906px;
 }
 
 .logo {
@@ -27,7 +28,7 @@ header {
 }
 
 .content {
-  width: 80%;
+  width: 906px;
   margin: 0 auto;
   height: 1000px;
 }
