@@ -1,9 +1,11 @@
 <?php
-
-function searchShelfBooks()
+/**
+ * @param PDO
+ */
+function getShelfBooks($pdo)
 {
   require_once(__DIR__.'/checkLoginAPI.php');
-  $check = checkLogin();
+  $check = checkLogin($pdo);
   if($check['status'] == '400')
   {
     exit("400");
@@ -18,6 +20,3 @@ function searchShelfBooks()
     return $books_data;
   }
 }
-
-$books = searchShelfBooks();
-var_dump($books);
