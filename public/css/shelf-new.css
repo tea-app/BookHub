@@ -1,0 +1,25 @@
+.new-shelf {
+  font-size: 24px;
+  padding-top: 16px;
+}
+
+.name-shelf {
+  padding-top: 32px;
+}
+
+.name-shelf input {
+  width: 350px;
+}
+
+.explanation-shelf {
+  padding-top: 24px;
+}
+
+.explanation-shelf input {
+  width: 906px;
+  margin-bottom: 32px;
+}
+
+button {
+  float: right;
+}
