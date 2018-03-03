@@ -5,7 +5,6 @@ session_start();
 
 function checkLoginPage()
 {
-  $url = 'https://dev.prog24.com/public/login.php';
   if($_SESSION['accessToken'])
   {
     require_once(__DIR__.'/../../src/connect.php');
