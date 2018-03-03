@@ -39,13 +39,31 @@ class Categories
    * Get Shelf's Categories
    * 
    * @param int $shelf_id
+   * 
+   * @return array $categories
    */
   public function getShelfCate($shelf_id)
   {
     $stmt = $this->connect->prepare('SELECT * FROM categories WHERE shelf_id = :shelf_id');
     $stmt->bindParam(':shelf_id', $shelf_id, PDO::PARAM_INT);
     $stmt->execute();
-    $shelf = $stmt->fetchAll();
-    return $shelf;
+    $categories = $stmt->fetchAll();
+    return $categories;
+  }
+
+  /**
+   * Get Category Data
+   * 
+   * @param int $id
+   * 
+   * @return array $category
+   */
+  public function getCategory($id)
+  {
+    $stmt = $this->connect->prepare('SELECT * FROM categories WHERE id = :id');
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $category = $stmt->fetch();
+    return $category;
   }
 }
