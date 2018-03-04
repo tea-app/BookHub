@@ -33,6 +33,7 @@ if($checkLogin['status'] == '200')
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="css/list.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -77,6 +78,11 @@ if($checkLogin['status'] == '200')
           </div>
           <?php endforeach; ?>
 
+        </div>
+        <div class="floating">
+          <a href="#">
+            <img src="icon/book-plus.svg" width="70px" height="70px"/>
+          </a>
         </div>
       </div>
     </div>
