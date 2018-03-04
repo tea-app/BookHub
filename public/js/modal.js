@@ -61,8 +61,9 @@ $(function(){
 
     $(nowModalSyncer).css({"width": 720 + "px","height": 400 + "px","margin": 0,
     "padding": 10 + "px" + " " + 20 + "px","border": 2 + "px" + " " + "solid" + " " + "#aaa",
-    "background": "#fff", "position": "absolute", "z-index": 2,
-    "left": "calc(" + "(" + 100 + "%" + " - " +  720 + "px" + ")" + "/" + 2 + ")","top": 20 + "%"});
+    "background": "#fff", "position": "fixed", "z-index": 2,
+    "left": "calc(" + "(" + 100 + "%" + " - " +  784.5 + "px" + ")" + "/" + 2 + ")","top": 20 + "%"
+    });
   }
 
 });
