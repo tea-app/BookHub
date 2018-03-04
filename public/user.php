@@ -56,7 +56,7 @@ if($checkLogin['status'] == '200')
                 </div>
                 <?php endforeach; ?>
               </div>
-              <button type="button" class="btn btn-default">　　追加　　</button>
+              <a href="<?php echo $base_url.'new-shelf.php'; ?>"><button type="button" class="btn btn-default">　　追加　　</button></a>
             </div>
             <div id="tab2" class="tab-pane">
               <div class="book-shelf-list">
