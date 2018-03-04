@@ -29,12 +29,13 @@ class Users
    * @param string $user_name
    * @param string $access_token
    */
-  public function addUser($user_id, $name, $access_token)
+  public function addUser($user_id, $name, $access_token, $image_url)
   {
-    $stmt = $this->connect->prepare('INSERT INTO users (user_id, name, access_token) VALUES (:user_id, :name, :access_token)');
+    $stmt = $this->connect->prepare('INSERT INTO users (user_id, name, access_token, image_url) VALUES (:user_id, :name, :access_token, :image_url)');
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
     $stmt->bindValue(':name', $name, PDO::PARAM_STR);
     $stmt->bindValue(':access_token', $access_token, PDO::PARAM_STR);
+    $stmt->bindValue(':image_url', $image_url, PDO::PARAM_STR);
     $stmt->execute();
   }
   /**

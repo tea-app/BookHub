@@ -30,8 +30,9 @@ if($auth_code)
       else
       {
         // 未登録
+        $user_icon = $profile['pictureUrl'];
         $name = $profile['displayName'];
-        $users->addUser($_SESSION['userId'], $name, $_SESSION['accessToken']);
+        $users->addUser($_SESSION['userId'], $name, $_SESSION['accessToken'], $user_icon);
         header("Location: {$url}");
         exit("200");
       }
@@ -55,7 +56,8 @@ if($auth_code)
       {
         // 未登録
         $name = $profiele['displayName'];
-        $users->addUser($_SESSION['userId'], $name, $_SESSION['accessToken']);
+        $user_icon = $profile['pictureUrl'];
+        $users->addUser($_SESSION['userId'], $name, $_SESSION['accessToken'], $user_icon);
         header("Location: {$url}");
         exit("200");
       }
@@ -78,9 +80,11 @@ if($auth_code)
     }
     else
     {
+      echo "aa";
       // 未登録
+      $user_icon = $profile['pictureUrl'];
       $name = $profile['displayName'];
-      $users->addUser($_SESSION['userId'], $name, $_SESSION['accessToken']);
+      $users->addUser($_SESSION['userId'], $name, $_SESSION['accessToken'], $user_icon);
       header("Location: {$url}");
       exit("200");
     }
