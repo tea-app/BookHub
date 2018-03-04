@@ -78,9 +78,12 @@ if($auth_code)
     }
     else
     {
+      echo "aa";
       // 未登録
+      $user_icon = $profile['pictureUrl'];
+      var_dump($user_icon);
       $name = $profile['displayName'];
-      $users->addUser($_SESSION['userId'], $name, $_SESSION['accessToken']);
+      $users->addUser($_SESSION['userId'], $name, $_SESSION['accessToken'], $user_icon);
       header("Location: {$url}");
       exit("200");
     }
