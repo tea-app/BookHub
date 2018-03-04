@@ -1,0 +1,41 @@
+.book-add {
+  font-size: 24px;
+  padding-top: 16px;
+}
+
+.isbn {
+  padding-top: 24px;
+}
+
+button {
+  float: right;
+}
+
+.control-1 {
+  margin: 0 540px 0 0;
+}
+
+.book-name {
+  padding-top: 16px;
+}
+
+.author-name {
+  padding-top: 16px;
+}
+
+.img-url {
+  padding-top: 16px;
+}
+
+.img-url input {
+  width: 512px;
+}
+
+.category {
+  padding-top: 16px;
+  width: 160px;
+}
+
+.control-2 {
+  padding-top: 24px;
+}
