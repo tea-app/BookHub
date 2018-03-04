@@ -9,7 +9,7 @@ $auth_code = $_GET['code'];
 $auth = new Auth();
 $pdo = connect();
 $users = new Users($pdo, 'users');
-$url = 'https://dev.prog24.com/public/page.php';
+$url = 'https://dev.prog24.com/public/user.php';
 
 if($auth_code)
 {
