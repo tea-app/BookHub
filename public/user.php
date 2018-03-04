@@ -9,6 +9,7 @@ if($checkLogin['status'] == '200')
   require_once(__DIR__.'/api2/get-user-shelf.php');
   $shelf = getUserShelf($checkLogin['pdo'], $_SESSION['userId'])['data'];
   $shelf_url = 'https://dev.prog24.com/public/shelf.php?id=';
+  $base_url = 'https://dev.prog24.com/public/';
 }
 ?>
 <html>
@@ -30,7 +31,7 @@ if($checkLogin['status'] == '200')
     <body>
       <header>
         <div class="logo">BookHub</div>
-        <img src="<?php echo $user_info['image_url']; ?>" class="line-name"/>
+        <a href="<?php echo $base_url.'user.php'; ?>" title="ユーザページ"><img src="<?php echo $user_info['image_url']; ?>" class="line-name"/></a>
         <img src="icon/plus.svg" class="make-book"/>
       </header>
       <div class="main">
