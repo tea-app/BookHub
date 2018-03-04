@@ -1,0 +1,33 @@
+.setting {
+  font-size: 24px;
+  padding: 16px 0;
+}
+
+.book-shelf-list {
+  margin-top: 32px;
+}
+
+.book-shelf {
+  border: 1px solid #d3d3d3;
+  padding: 8px 8px 8px 0;
+}
+
+.book-title {
+  margin-left: 8px;
+}
+
+.shelf-title {
+  margin-left: 24px;
+}
+
+.shelf-title2 {
+  margin-left: 8px;
+}
+
+button {
+  float: right;
+}
+
+.btn-default {
+  margin-top: 5px;
+}
