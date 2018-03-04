@@ -59,10 +59,10 @@ $(function(){
 
     if(nowModalSyncer == null) return false;
 
-    $(nowModalSyncer).css({"width": 560 + "px","height": 400 + "px","margin": 0,
+    $(nowModalSyncer).css({"width": 720 + "px","height": 400 + "px","margin": 0,
     "padding": 10 + "px" + " " + 20 + "px","border": 2 + "px" + " " + "solid" + " " + "#aaa",
-    "background": "#fff", "position": "fixed", "dusplay": "none", "z-index": 2,
-    "left": 300 + "px","top": 150 + "px"});
+    "background": "#fff", "position": "absolute", "z-index": 2,
+    "left": "calc(" + "(" + 100 + "%" + " - " +  720 + "px" + ")" + "/" + 2 + ")","top": 20 + "%"});
   }
 
 });

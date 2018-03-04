@@ -5,14 +5,14 @@
 .modal-book-img {
 	float: left;
 	width: 200px;
-	height: 300px;
+	max-height: 300px;
 }
 
 .modal-info {
 	float: left;
 	padding-left: 8px;
 	height: 160px;
-	width: 208px;
+	width: 308px;
 	font-size: 18px;
 }
 
@@ -28,7 +28,7 @@
 .modal-borrow-button {
 	height: 80px;
 	width: 200px;
-	margin-left: 60px;
+	margin-left: 140px;
 	margin-top: 100px;
 }
 
