@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="css/shelf.css">
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-    <script src="js/modal.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
 	</head>
   <body>
     <header>
@@ -40,7 +42,7 @@
           </div>
         </div>
         <div class="shelf-list">
-          <div class="book-content" id="1" onClick="reaction(this);">
+          <div class="book-content" data-target="modal-content1">
             <img src="book.jpg" class="book-img"></img>
             <div class="book-info">
               <div class="book-title">
@@ -48,7 +50,7 @@
               </div>
             </div>
           </div>
-          <div class="book-content" id="2" onClick="reaction(this);">
+          <div class="book-content" data-target="modal-content2">
             <img src="book2.jpg" class="book-img"></img>
             <div class="book-info">
               <div class="book-title">
@@ -59,5 +61,16 @@
         </div>
       </div>
     </div>
+
+    <!-- ここからモーダルウィンドウ-->
+    <div id="modal-content1" class="modal-contents">
+      <p class="modal-title">test1</p>
+      <p><a id="modal-close" class="button-link">×</a></p>
+    </div>
+    <div id="modal-content2" class="modal-contents">
+      <p class="modal-title">test2</p>
+      <p><a id="modal-close" class="button-link">×</a></p>
+    </div>
+    <!-- ここまでモーダルウィンドウ-->
   </body>
 </html>
