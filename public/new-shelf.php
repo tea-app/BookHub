@@ -4,6 +4,9 @@ $checkLogin = checkLoginPage();
 if($checkLogin['status'] == '200')
 {
   //
+  $base_url = 'https://dev.prog24.com/public/';
+  require_once(__DIR__.'/api2/get-user-info.php');
+  $login_user = getUserInfo($checkLogin['pdo'], $_SESSION['userId'])['data'];
 }else{
   $url = 'https://dev.prog24.com/public/login.php';
   header("Location: {$url}");
@@ -27,8 +30,8 @@ if($checkLogin['status'] == '200')
     <body>
       <header>
         <div class="logo">BookHub</div>
-        <img src="test.jpg" class="line-name"></img>
-        <img src="test.jpg" class="make-book"></img>
+        <a href="<?php echo $base_url.'user.php' ?>"><img src="<?php echo $login_user['image_url']; ?>" class="line-name"></img></a>
+        <img src="icon/plus.svg" class="make-book"></img>
       </header>
       <div class="main">
         <div class="content">
