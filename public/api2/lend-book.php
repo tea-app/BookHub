@@ -11,8 +11,8 @@ if($checkLogin['status'] == '200')
   require_once(__DIR__.'/../../src/Books.php');
   $books = new Books($checkLogin['pdo'], 'books');
   $books->lendBook($book_id, $_SESSION['userId']);
-  $url = "https://dev.prog24.com/public/shelf.php?id=".$_GET['book_id'];
-
+  $url = "https://dev.prog24.com/public/shelf.php?id=".$_SESSION['shelf_id'];
+  header("Location: {$url}");
 }else{
   $url = 'https://dev.prog24.com/public/login.php';
   header("Location: {$url}");
