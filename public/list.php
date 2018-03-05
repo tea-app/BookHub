@@ -15,6 +15,8 @@ if($checkLogin['status'] == '200')
   $user_info = getUserInfo($checkLogin['pdo'], $shelf_info['user_id'])['data'];
   $login_user = getUserInfo($checkLogin['pdo'], $_SESSION['userId'])['data'];
   $base_url = 'https://dev.prog24.com/public/';
+
+  require_once(__DIR__.'/api2/get-category.php');
 }else{
   $url = 'https://dev.prog24.com/public/login.php';
   header("Location: {$url}");
@@ -80,7 +82,7 @@ if($checkLogin['status'] == '200')
 
         </div>
         <div class="floating">
-          <a href="#">
+          <a href="https://dev.prog24.com/public/new-book.php?id=<?php echo $_GET['id'] ?>">
             <img src="icon/book-plus.svg" width="70px" height="70px"/>
           </a>
         </div>
@@ -92,12 +94,22 @@ if($checkLogin['status'] == '200')
       <div id="<?php echo $book['id']; ?>" class="modal-contents">
         <img src="<?php echo $book['image_url']; ?>" class="modal-book-img"></img>
         <div class="modal-info">
-          <div class="modal-title"><?php echo $book['title']; ?></div>
-          <div class="modal-writer"><?php echo $book['author']; ?></div>
-          <div class="modal-isbn">isbn:<?php echo $book['isbn']; ?></div>
-          <div class="modal-category"><?php echo $book['cate_id']; ?></div>
+          <div class="modal-title">タイトル：<?php echo $book['title']; ?></div>
+          <div class="modal-writer">著者名：<?php echo $book['author']; ?></div>
+          <div class="modal-isbn">isbn：<?php echo $book['isbn']; ?></div>
+          <?php
+          $book['cate'] = getCategory($checkLogin['pdo'], $book['cate_id']);
+          ?>
+          <div class="modal-category">カテゴリ：<?php echo $book['cate']['data']['name']; ?></div>
         </div>
-        <button type="button" role="button" class="modal-borrow-button btn btn-lg btn-primary">借りる!</button>
+        <!-- 借りられている時は借りている人の名前を表示する -->
+        <?php if($book['status'] == '0') : ?>
+        <a href="https://dev.prog24.com/public/api2/lend-book.php?book_id=<?php echo $book['id'] ?>"><button type="button" role="button" class="modal-borrow-button btn btn-lg btn-primary">借りる!</button></a>
+        <?php else : ?>
+        借りられています
+        <?php endif; ?>
+        
+
         <p><a id="modal-close" class="button-link">×</a></p>
       </div>
     <?php endforeach; ?>
