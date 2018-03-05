@@ -51,7 +51,7 @@ if($checkLogin['status'] == '200')
       <header>
         <div class="logo">BookHub</div>
         <a href="<?php echo $base_url.'user.php'; ?>"><img src="<?php echo $login_user['image_url']; ?>" class="line-name"></img></a>
-        <img src="icon/plus.svg" class="make-book"></img>
+        <a href="https://dev.prog24.com/public/shelf-setting.php?id=<?php echo $_GET['id'] ?>"><img src="icon/setting.svg" title="本棚の設定" class="make-book"></img></a>
       </header>
       <div class="main">
         <div class="content">
