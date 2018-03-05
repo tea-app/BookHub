@@ -1,0 +1,281 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+p { margin: 0; }
+
+.login {
+  margin: 0;
+  width: calc(142px * 2.5);
+  height: calc(40px * 2.5);
+  position: absolute;
+  top: 200px;
+  right: 0%;
+  opacity: 0;
+}
+
+.pointer {
+  left: 500px;
+  margin: 0;
+  height: 100px;
+  position: absolute;
+  top: 200px;
+  right: 0%;
+  opacity: 0;
+}
+
+.login:hover {
+  cursor: pointer;
+}
+
+#stage {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  min-width: 1100px; min-height: 650px;
+  overflow: hidden;
+}
+
+#prologue {
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%; height: 100%;
+}
+
+#prologue .word-1,
+#prologue .word-2,
+#prologue .word-3 {
+  position: absolute;
+  top: calc(50% - 60px);
+  height: 120px;
+}
+#prologue .word-1 div,
+#prologue .word-2 div,
+#prologue .word-3 div {
+  float: left;
+  width: 120px; height: 120px;
+  border: solid 1px #888;
+  border-right: none;
+  box-sizing: border-box;
+}
+
+#prologue .word-2 div:nth-child(1) p,
+#prologue .word-3 div:nth-child(1) p {
+  width: 100%; height: 100%;
+  font-size: 80px;
+  color: #777;
+  text-align: center;
+  line-height: 120px;
+  opacity: 1;
+  margin-right: 60px;
+}
+
+#prologue .word-1 div p,
+#prologue .word-2 div:nth-child(n+2) p,
+#prologue .word-3 div:nth-child(n+2) p {
+  width: 100%; height: 100%;
+  font-size: 80px;
+  color: #777;
+  text-align: center;
+  line-height: 120px;
+  opacity: 0;
+}
+
+#prologue .word-1 div,
+#prologue .word-2 div,
+#prologue .word-3 div { border-right: solid 1px #888; }
+#prologue .word-1:after,
+#prologue .word-2:after,
+#prologue .word-3:after {
+  content: ""; display: block; clear: both;
+}
+
+#prologue .word-1 { left: calc(25% - 360px);}
+#prologue .word-2 { right: 80px; }
+#prologue .word-3 { right: calc(-50% - 380px); }
+
+#prologue .connect-line {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+#prologue .connect-line .point {
+  position: absolute; top: calc(50% + 90px);
+  width: 20px; height: 20px;
+  background-color: #666;
+  border-radius: 50%;
+}
+#prologue .connect-line .point-1 { left: calc(25% - 370px);}
+#prologue .connect-line .point-2 { left: calc(25% + 350px); transform: scale(0);}
+#prologue .connect-line .point-3 { right: 70px; transform: scale(0);}
+#prologue .connect-line .point-4 { right: calc(-50% - 390px); transform: scale(0);}
+
+#prologue .line {
+  position: absolute;
+  top: calc(50% + 99px);
+  height: 1px;
+  overflow: hidden;
+}
+#prologue .line:after {
+  content: ""; display: block;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #666;
+  transform: translateX(-100%);
+}
+#prologue .line-1 { width: 720px; left: calc(25% - 360px);}
+#prologue .line-2 {
+  width: calc(((50% - 480px) / 2) + (50% - 80px));
+  right: 80px;
+}
+#prologue .line-3 {
+  width: calc(((175% - 480px) / 2) + (50% - 80px));
+  left: 1500px;
+}
+
+#prologue .word-1 .text {
+  position: absolute;
+  top: calc(-20%); left: calc(25% - 180px);
+  width: 320px; height: 30px;
+  display: block;
+  font-size: 14px;
+  color: #555;
+  line-height: 30px;
+  opacity: 0;
+}
+
+#prologue .word-2 .text {
+  position: absolute;
+  top: calc(-20%); right: calc(160px);
+  width: 320px; height: 30px;
+  display: block;
+  font-size: 14px;
+  color: #555;
+  line-height: 30px;
+  opacity: 0;
+}
+
+#prologue .word-3 .text {
+  position: absolute;
+  top: calc(-20%); left: calc(25% - 120px);
+  width: 320px; height: 30px;
+  display: block;
+  font-size: 14px;
+  color: #555;
+  line-height: 30px;
+  opacity: 0;
+}
+
+/* animation */
+
+#prologue { animation: move-prologue 0.8s ease 1.6s forwards,
+            reverse-prologue 1.6s ease 3.6s forwards; }
+
+#prologue .point-2 { animation: put-point 0.7s ease-out 0.6s forwards;}
+
+#prologue .word-1 div:nth-child(1) p { animation: show-word 0.6s ease-out 0.0s forwards;}
+#prologue .word-1 div:nth-child(2) p { animation: show-word 0.6s ease-out 0.2s forwards;}
+#prologue .word-1 div:nth-child(3) p { animation: show-word 0.6s ease-out 0.4s forwards;}
+#prologue .word-1 div:nth-child(4) p { animation: show-word 0.6s ease-out 0.6s forwards;}
+#prologue .word-1 div:nth-child(5) p { animation: show-word 0.6s ease-out 0.8s forwards;}
+#prologue .word-1 div:nth-child(6) p { animation: show-word 0.6s ease-out 1.0s forwards;}
+
+#prologue .word-1 .text {
+  animation: show-text 0.5s ease 0.9s forwards; }
+
+#prologue .line-1:after { animation: draw-line 0.7s ease 0s forwards; }
+
+#prologue .line-2:after { animation: slash-line 0.8s ease 1.6s forwards;}
+
+#prologue .point-3 { animation: put-point 1s ease-out 2.4s forwards;}
+
+/*ここ*/
+#prologue .word-2 div:nth-child(2) p { animation: show-word 0.6s ease-out 2.0s forwards; }
+#prologue .word-2 div:nth-child(3) p { animation: show-word 0.6s ease-out 2.2s forwards; }
+#prologue .word-2 div:nth-child(4) p { animation: show-word 0.6s ease-out 2.4s forwards; }
+#prologue .word-2 div:nth-child(5) p { animation: show-word 0.6s ease-out 2.6s forwards; }
+
+#prologue .word-2 .text {
+  animation: show-text 0.5s ease 2.5s forwards; }
+
+#prologue .line-3:after { animation: slash-line 1.4s ease 3.6s forwards;}
+
+#prologue .point-4 { animation: put-point 2s ease-out 5s forwards;}
+
+#prologue .word-3 div:nth-child(2) p { animation: show-word 0.6s ease-out 5.0s forwards;}
+#prologue .word-3 div:nth-child(3) p { animation: show-word 0.6s ease-out 5.2s forwards;}
+#prologue .word-3 div:nth-child(4) p { animation: show-word 0.6s ease-out 5.4s forwards;}
+#prologue .word-3 div:nth-child(5) p { animation: show-word 0.6s ease-out 5.6s forwards;}
+#prologue .word-3 div:nth-child(6) p { animation: show-word 0.6s ease-out 5.8s forwards;}
+#prologue .word-3 div:nth-child(7) p { animation: show-word 0.6s ease-out 6.0s forwards;}
+#prologue .word-3 div:nth-child(8) p { animation: show-word 0.6s ease-out 6.2s forwards;}
+
+#prologue .word-3 .text {
+  animation: show-text 0.5s ease 6.1s forwards; }
+
+#prologue .word-3 .login {
+  animation:  appear-logo 1.0s ease 6.1s forwards;
+}
+
+#prologue .word-3 .pointer {
+  animation:  appear-pointer 1.0s ease 6.8s forwards;
+}
+
+
+
+/* @keyframes */
+
+@keyframes show-word {
+  0% { transform: scale(0.4); opacity: 0; }
+  70% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes draw-line {
+  0% { transform: translateX(-100%);}
+  100% { transform: translateX(0%);}
+}
+@keyframes slash-line {
+  0% { transform: translateX(-100%);}
+
+  100% { transform: translateX(0%);}
+}
+@keyframes move-prologue {
+  0% { transform: translateX(0);}
+  100% { transform: translateX(-60%);}
+}
+@keyframes put-point {
+  0% { transform: scale(0);}
+  70% { transform: scale(2);}
+  100% { transform: scale(1);}
+}
+
+@keyframes show-text {
+  0%   { transform: translateX(-100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes reverse-line {
+  0% { transform: translateX(-100%);}
+  50% { transform: translateX(0%);}
+  100% { transform: translateX(100%);}
+}
+
+@keyframes reverse-prologue {
+  0% { transform: translateX(-60%);}
+  100% { transform: translateX(-120%);}
+}
+
+@keyframes appear-logo {
+  0% { transform:  translateX(-800%);opacity: 1;}
+  100% { transform: translateX(0%);opacity: 1;}
+}
+
+@keyframes appear-pointer {
+  0% { transform:  translateX(-800%);opacity: 1;}
+  60% { transform:  translateX(0%);opacity: 1;}
+  70% { transform:  translateX(0%);opacity: 1;}
+  90% { transform:  translateX(10%);opacity: 1;}
+  100% { transform: translateX(0%);opacity: 1;}
+}
