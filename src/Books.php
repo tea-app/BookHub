@@ -125,7 +125,7 @@ class Books
     $stmt = $this->connect->prepare('SELECT * FROM books WHERE status = :status');
     $stmt->bindParam(':status', $status, PDO::PARAM_STR);
     $stmt->execute();
-    $books = $stmt->fetchAll();
+    $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $books;
   }
 }
