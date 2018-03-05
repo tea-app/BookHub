@@ -38,7 +38,7 @@ if($checkLogin['status'] == '200')
       </header>
       <div class="main">
         <div class="content">
-          <div class="shelf-config">本棚設定</div>
+          <div class="shelf-config">本棚設定（<a href="https://dev.prog24.com/public/shelf.php?id=<?php echo $_GET['id'] ?>">本棚に戻る</a>）</div>
           <div class="cat-edit">カテゴリ編集</div>
           <div class="cat-list">
             <?php foreach($cate as $data) : ?>
