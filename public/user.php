@@ -10,6 +10,10 @@ if($checkLogin['status'] == '200')
   $shelf = getUserShelf($checkLogin['pdo'], $_SESSION['userId'])['data'];
   $shelf_url = 'https://dev.prog24.com/public/shelf.php?id=';
   $base_url = 'https://dev.prog24.com/public/';
+
+  require_once(__DIR__.'/api2/get-user-lend-books.php');
+  $lend_books = getUserLendBooks($checkLogin['pdo'])['data'];
+  require_once(__DIR__.'/api2/get-shelf-data.php');
 }
 ?>
 <html>
@@ -60,26 +64,18 @@ if($checkLogin['status'] == '200')
             </div>
             <div id="tab2" class="tab-pane">
               <div class="book-shelf-list">
+
+                <?php foreach($lend_books as $lend_book): ?>
+                <?php $lend_book['shelf_name'] = getShelfData($checkLogin['pdo'], $lend_book['shelf_id'])['data']['title'] ?>
                 <div class="book-shelf">
-                  <button type="button" class="btn btn-default">　　返却　　</button>
-                  <div class="book-title">本のタイトルA</div>
-                  <div class="shelf-title">本棚のタイトルA</div>
+                  <form action="https://dev.prog24.com/public/api2/return-book.php" method="POST">
+                  <input type="hidden" value="<?php echo $lend_book['id'] ?>" name="book_id">
+                  <button type="submit" class="btn btn-default">　　返却　　</button>
+                  </form>
+                  <div class="book-title"><?php echo $lend_book['title'] ?></div>
+                  <div class="shelf-title"><?php echo $lend_book['shelf_name'] ?></div>
                 </div>
-                <div class="book-shelf">
-                  <button type="button" class="btn btn-default">　　返却　　</button>
-                  <div class="book-title">本のタイトルB</div>
-                  <div class="shelf-title">本棚のタイトルB</div>
-                </div>
-                <div class="book-shelf">
-                  <button type="button" class="btn btn-default">　　返却　　</button>
-                  <div class="book-title">本のタイトルA</div>
-                  <div class="shelf-title">本棚のタイトルA</div>
-                </div>
-                <div class="book-shelf">
-                  <button type="button" class="btn btn-default">　　返却　　</button>
-                  <div class="book-title">本のタイトルB</div>
-                  <div class="shelf-title">本棚のタイトルB</div>
-                </div>
+                <?php endforeach ; ?>
               </div>
             </div>
           </div>

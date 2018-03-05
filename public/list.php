@@ -17,6 +17,8 @@ if($checkLogin['status'] == '200')
   $base_url = 'https://dev.prog24.com/public/';
 
   require_once(__DIR__.'/api2/get-category.php');
+  $_SESSION['shelf_id'] = null;
+  $_SESSION['shelf_id'] = $_GET['id'];
 }else{
   $url = 'https://dev.prog24.com/public/login.php';
   header("Location: {$url}");
