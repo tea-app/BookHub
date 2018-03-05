@@ -11,6 +11,8 @@ if($_SESSION['userId']){
   $type = 0;
   
   $shelfs->newShelf($title, $_SESSION['userId'], $detail, $type);
+  $url = "https://dev.prog24.com/public/user.php";
+  header("Location: {$url}");
 }else{
   exit("400");
 }
