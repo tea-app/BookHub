@@ -14,6 +14,9 @@ if($checkLogin['status'] == '200')
   require_once(__DIR__.'/api2/get-user-lend-books.php');
   $lend_books = getUserLendBooks($checkLogin['pdo'])['data'];
   require_once(__DIR__.'/api2/get-shelf-data.php');
+}else{
+  $url = 'https://dev.prog24.com/public/login.php';
+  header("Location: {$url}");
 }
 ?>
 <html>
