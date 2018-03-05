@@ -36,7 +36,6 @@ if($checkLogin['status'] == '200')
       <header>
         <div class="logo">BookHub</div>
         <a href="<?php echo $base_url.'user.php'; ?>" title="ユーザページ"><img src="<?php echo $user_info['image_url']; ?>" class="line-name"/></a>
-        <img src="icon/plus.svg" class="make-book"/>
       </header>
       <div class="main">
         <div class="content">
