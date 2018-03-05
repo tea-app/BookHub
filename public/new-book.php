@@ -33,7 +33,7 @@ if($checkLogin['status'] == '200')
     <body>
       <header>
         <div class="logo">BookHub</div>
-        <img src="<?php echo $login_user['image_url']; ?>" class="line-name"></img>
+        <a href="https://dev.prog24.com/public/user.php"><img src="<?php echo $login_user['image_url']; ?>" class="line-name"></img></a>
         <img src="icon/plus.svg" class="make-book"></img>
       </header>
       <div class="main">
