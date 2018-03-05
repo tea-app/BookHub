@@ -60,7 +60,7 @@ if($checkLogin['status'] == '200')
                 </div>
                 <?php endforeach; ?>
               </div>
-              <a href="<?php echo $base_url.'new-shelf.php'; ?>"><button type="button" class="btn btn-default">　　追加　　</button></a>
+              <a href="<?php echo $base_url.'new-shelf.php'; ?>"><button type="button" class="btn page-link text-dark d-inline-block">　　追加　　</button></a>
             </div>
             <div id="tab2" class="tab-pane">
               <div class="book-shelf-list">
@@ -70,7 +70,7 @@ if($checkLogin['status'] == '200')
                 <div class="book-shelf">
                   <form action="https://dev.prog24.com/public/api2/return-book.php" method="POST">
                   <input type="hidden" value="<?php echo $lend_book['id'] ?>" name="book_id">
-                  <button type="submit" class="btn btn-default">　　返却　　</button>
+                  <button type="submit" class="btn page-link text-dark d-inline-block">　　返却　　</button>
                   </form>
                   <div class="book-title"><?php echo $lend_book['title'] ?></div>
                   <div class="shelf-title"><?php echo $lend_book['shelf_name'] ?></div>

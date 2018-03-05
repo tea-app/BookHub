@@ -43,7 +43,7 @@ if($checkLogin['status'] == '200')
           <div class="explanation-shelf">説明
             <input type="text" name="detail">
           </div>
-          <button type="submit" class="btn btn-default">　　作成　　</button>
+          <button type="submit" class="btn page-link text-dark d-inline-block">　　作成　　</button>
           </form>
         </div>
       </div>
