@@ -53,7 +53,7 @@ if($checkLogin['status'] == '200')
               <input type="text" name="author">
           </div>
           <div class="img-url">画像URL
-              <input type="text" name="image_url">
+              <input type="text" name="image_url" value="https://dev.prog24.com/public/icon/hatena.jpg">
           </div>
           <div class="category">カテゴリ
             <select class="custom-select d-block w-100" id="country" required name="cate_id">

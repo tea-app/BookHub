@@ -1,26 +1,19 @@
 <?php
 session_start();
 
-function lendBook()
+require_once(__DIR__.'/checkLoginPage.php');
+$checkLogin = checkLoginPage();
+var_dump($checkLogin);
+
+if($checkLogin['status'] == '200')
 {
-  require_once(__DIR__.'/checkLoginAPI.php');
-  $check = checkLogin();
-  if($check['status'] == '400')
-  {
-    exit("400");
-  }else{
-    require_once(__DIR__.'/../../src/Books.php');
-    $pdo = $check['pdo'];
-    $books = new Books($pdo, 'books');
+  $book_id = $_GET['book_id'];
+  require_once(__DIR__.'/../../src/Books.php');
+  $books = new Books($checkLogin['pdo'], 'books');
+  $books->lendBook($book_id, $_SESSION['userId']);
+  $url = "https://dev.prog24.com/public/shelf.php?id=".$_GET['book_id'];
 
-    $id = 3;
-    $userId = $_SESSION['userId'];
-
-    $books->lendBook($id, $userId);
-    $return = array('status'=>'200');
-    return $return;
-  }
+}else{
+  $url = 'https://dev.prog24.com/public/login.php';
+  header("Location: {$url}");
 }
-
-$return = lendBook();
-var_dump($return);
