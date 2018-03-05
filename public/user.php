@@ -75,13 +75,15 @@ if($checkLogin['status'] == '200')
                   <button type="submit" class="btn page-link text-dark d-inline-block">　　返却　　</button>
                   </form>
                   <div class="book-title"><?php echo $lend_book['title'] ?></div>
-                  <div class="shelf-title"><?php echo $lend_book['shelf_name'] ?></div>
+                  <div class="shelf-title"><a href="https://dev.prog24.com/public/shelf.php?id=<?php echo $lend_book['shelf_id'] ?>"><?php echo $lend_book['shelf_name'] ?></a></div>
                 </div>
                 <?php endforeach ; ?>
               </div>
             </div>
           </div>
+          <a href="https://dev.prog24.com/public/api2/logout.php">ログアウト</a>
         </div>
+        
       </div>
     </body>
 </html>
